@@ -4,7 +4,7 @@ import LocalModel from "../models/Local.model.js";
 import DrinkModel from "../models/Drink.model.js";
 import FoodModel from "../models/Food.model.js";
 import ShotModel from "../models/Shot.model.js";
-import IngredientsModel from "../models/Ingredients.model.js";
+import IngredientModel from "../models/Ingredient.model.js";
 import LotModel from "../models/Lot.model.js";
 import OfferModel from "../models/Offer.model.js";
 import SaleModel from "../models/Sale.model.js";
@@ -34,14 +34,14 @@ FoodModel.belongsToMany(LocalModel, { through: Local_Food_Table });
 LocalModel.belongsToMany(ShotModel, { through: Local_Shot_Table });
 ShotModel.belongsToMany(LocalModel, { through: Local_Shot_Table });
 
-FoodModel.belongsToMany(IngredientsModel, { through: Food_Ingredients_Table });
-IngredientsModel.belongsToMany(FoodModel, { through: Food_Ingredients_Table });
+FoodModel.belongsToMany(IngredientModel, { through: Food_Ingredients_Table });
+IngredientModel.belongsToMany(FoodModel, { through: Food_Ingredients_Table });
 
 LotModel.belongsToMany(DrinkModel, { through: Lot_Drink_Table });
 DrinkModel.belongsToMany(LotModel, { through: Lot_Drink_Table });
 
-LotModel.belongsToMany(IngredientsModel, { through: Lot_Ingredients_Table });
-IngredientsModel.belongsToMany(LotModel, { through: Lot_Ingredients_Table });
+LotModel.belongsToMany(IngredientModel, { through: Lot_Ingredients_Table });
+IngredientModel.belongsToMany(LotModel, { through: Lot_Ingredients_Table });
 
 OfferModel.belongsToMany(DrinkModel, { through: Offer_Drink_Table });
 DrinkModel.belongsToMany(OfferModel, { through: Offer_Drink_Table });

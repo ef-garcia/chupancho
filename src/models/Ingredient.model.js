@@ -1,7 +1,7 @@
 import sequelize from "../config/db.js";
 import { DataTypes } from "sequelize";
 
-const IngredientsModel = sequelize.define(
+const IngredientModel = sequelize.define(
     'ingredients',
     {
         id: {
@@ -16,4 +16,4 @@ const IngredientsModel = sequelize.define(
     }
 )
 
-export default IngredientsModel
+export default IngredientModel

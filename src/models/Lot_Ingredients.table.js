@@ -1,7 +1,7 @@
 import sequelize from "../config/db.js";
 import { DataTypes } from "sequelize";
 import LotModel from "./Lot.model.js";
-import IngredientsModel from "./Ingredients.model.js";
+import IngredientModel from "./Ingredient.model.js";
 
 
 const Lot_Ingredients_Table = sequelize.define(
@@ -20,7 +20,7 @@ const Lot_Ingredients_Table = sequelize.define(
             type: DataTypes.INTEGER,
             foreignKey: true,
             references: {
-                model: IngredientsModel,
+                model: IngredientModel,
                 key: 'id'
             },
             allowNull: false
